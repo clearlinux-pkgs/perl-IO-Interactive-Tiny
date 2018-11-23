@@ -4,7 +4,7 @@
 #
 Name     : perl-IO-Interactive-Tiny
 Version  : 0.2
-Release  : 5
+Release  : 6
 URL      : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Summary  : is_interactive() without large deps
@@ -64,8 +64,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/IO/Interactive/Tiny.pm
-/usr/lib/perl5/vendor_perl/5.26.1/IO/Interactive/Tiny.pod
+/usr/lib/perl5/vendor_perl/5.28.0/IO/Interactive/Tiny.pm
+/usr/lib/perl5/vendor_perl/5.28.0/IO/Interactive/Tiny.pod
 
 %files dev
 %defattr(-,root,root,-)
