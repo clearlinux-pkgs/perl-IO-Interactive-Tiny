@@ -4,7 +4,7 @@
 #
 Name     : perl-IO-Interactive-Tiny
 Version  : 0.2
-Release  : 11
+Release  : 12
 URL      : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Summary  : is_interactive() without large deps
@@ -22,6 +22,7 @@ INSTALLATION
 Summary: dev components for the perl-IO-Interactive-Tiny package.
 Group: Development
 Provides: perl-IO-Interactive-Tiny-devel = %{version}-%{release}
+Requires: perl-IO-Interactive-Tiny = %{version}-%{release}
 
 %description dev
 dev components for the perl-IO-Interactive-Tiny package.
