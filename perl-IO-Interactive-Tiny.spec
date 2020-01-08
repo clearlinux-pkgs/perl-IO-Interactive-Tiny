@@ -4,12 +4,13 @@
 #
 Name     : perl-IO-Interactive-Tiny
 Version  : 0.2
-Release  : 14
+Release  : 15
 URL      : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Summary  : is_interactive() without large deps
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-IO-Interactive-Tiny-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -28,14 +29,24 @@ Requires: perl-IO-Interactive-Tiny = %{version}-%{release}
 dev components for the perl-IO-Interactive-Tiny package.
 
 
+%package perl
+Summary: perl components for the perl-IO-Interactive-Tiny package.
+Group: Default
+Requires: perl-IO-Interactive-Tiny = %{version}-%{release}
+
+%description perl
+perl components for the perl-IO-Interactive-Tiny package.
+
+
 %prep
 %setup -q -n IO-Interactive-Tiny-0.2
+cd %{_builddir}/IO-Interactive-Tiny-0.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -45,7 +56,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -65,9 +76,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/IO/Interactive/Tiny.pm
-/usr/lib/perl5/vendor_perl/5.28.2/IO/Interactive/Tiny.pod
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/IO::Interactive::Tiny.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/IO/Interactive/Tiny.pm
+/usr/lib/perl5/vendor_perl/5.30.1/IO/Interactive/Tiny.pod
