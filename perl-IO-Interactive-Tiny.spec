@@ -4,7 +4,7 @@
 #
 Name     : perl-IO-Interactive-Tiny
 Version  : 0.2
-Release  : 27
+Release  : 28
 URL      : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DM/DMUEY/IO-Interactive-Tiny-0.2.tar.gz
 Summary  : is_interactive() without large deps
